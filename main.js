@@ -28,7 +28,8 @@ client.once('ready', () => {
     console.log('Titanium is Online!');
 });
 
-client.on('message', message =>{
+client.on('message', message => {
+    
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
