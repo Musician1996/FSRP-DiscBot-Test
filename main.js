@@ -29,7 +29,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    message.member.roles.cache.some(role => role.name === 'FSRP Bots')
+    if(message.author.bot) return;
 
 
 
@@ -46,9 +46,8 @@ client.on('message', message => {
 // Anti Tag \\
 
 client.on('message', message => {
-    message.member.roles.cache.some(role => role.name === 'FSRP Bots')
+    if(message.author.bot) return;
       
-
     if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
         msg.reply('Please DO NOT Ping The Server Founder Directly!')
@@ -71,8 +70,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    message.member.roles.cache.some(role => role.name === 'FSRP Bots')
-
+    if(message.author.bot) return;
 
     if(msg.content.includes('<@!335616215001071627>')) {
         msg.delete()
