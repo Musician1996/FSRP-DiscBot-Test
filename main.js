@@ -44,6 +44,9 @@ client.on('message', message => {
 
 // Anti Tag \\
 client.on('message', async(msg) => {
+    if(message.author.bot) return; // do nothing
+    // if not responding to a bot, do bot stuff
+ 
     
     if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
@@ -65,6 +68,8 @@ client.on('message', async(msg) => {
 });
 
 client.on('message', async(msg) => {
+    if(message.author.bot) return; // do nothing
+    // if not responding to a bot, do bot stuff
 
     if(msg.content.includes('<@!335616215001071627>')) {
         msg.delete()
