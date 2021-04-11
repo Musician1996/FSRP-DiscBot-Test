@@ -40,8 +40,8 @@ client.on('message', message =>{
     }
 });
 // Anti Tag \\
-client.on('message', async(msg) => {
-    
+bot.on('message', async(msg) => {
+    if (message.author.bot)return;
     if(msg.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
         msg.delete()
         msg.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
@@ -49,7 +49,7 @@ client.on('message', async(msg) => {
             setTimeout(() => msg.delete(), 10000)
         })
 
-        client.on('messageUpdate', (oldMessage, newMessage) => {
+        bot.on('messageUpdate', (oldMessage, newMessage) => {
             if(newMessage.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
                 newMessage.delete()
                 newMessage.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
