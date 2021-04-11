@@ -8,27 +8,27 @@
 
 const Discord = require('discord.js');
 
-const bot = new Discord.bot();
+const client = new Discord.Client();
 
 const prefix = '|';
 
 const fs = require('fs');
 
-bot.commands = new Discord.Collection();
+client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
 
-    bot.commands.set(command.name, command);
+    client.commands.set(command.name, command);
 }
 
 
-bot.once('ready', () => {
+client.once('ready', () => {
     console.log('Titanium is Online!');
 });
 
-bot.on('message', message =>{
+client.on('message', message =>{
     if (message.author.bot) return;
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
@@ -36,12 +36,13 @@ bot.on('message', message =>{
     const command = args.shift().toLowerCase();
 
     if(command === 'clear'){
-        bot.commands.get('clear').execute(message, args);
+        client.commands.get('clear').execute(message, args);
     }
 });
 // Anti Tag \\
-bot.on('message', async(msg) => {
-    if (message.author.bot)return;
+client.on('message', async(msg) => {
+    if (message.author.bot)
+   return;
     if(msg.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
         msg.delete()
         msg.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
@@ -49,7 +50,7 @@ bot.on('message', async(msg) => {
             setTimeout(() => msg.delete(), 10000)
         })
 
-        bot.on('messageUpdate', (oldMessage, newMessage) => {
+        client.on('messageUpdate', (oldMessage, newMessage) => {
             if(newMessage.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
                 newMessage.delete()
                 newMessage.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
@@ -63,7 +64,7 @@ bot.on('message', async(msg) => {
 
 
 
-//bot.on('message', async(msg) => {
+//client.on('message', async(msg) => {
 //   if (message.author.bot) return;
 //    if(msg.content.includes('<@!335616215001071627>')) {
 //        msg.delete()
@@ -72,7 +73,7 @@ bot.on('message', async(msg) => {
 //            setTimeout(() => msg.delete(), 10000)
 //       })
 //
-//        bot.on('messageUpdate', (oldMessage, newMessage) => {
+//        client.on('messageUpdate', (oldMessage, newMessage) => {
 //            if(newMessage.content.includes('<@!335616215001071627>')) {
 //                newMessage.delete()
 //                newMessage.reply('**Please DO NOT Ping The Server Owner Directly!**')
@@ -85,4 +86,4 @@ bot.on('message', async(msg) => {
 //});
 
 
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
