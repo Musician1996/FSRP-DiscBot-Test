@@ -30,9 +30,7 @@ client.once('ready', () => {
 client.on('message', message => {
     if(message.author.bot) return; // do nothing
     // if not responding to a bot, do bot stuff
-  })
-  
-client.on('message', message => {
+
  
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
