@@ -28,7 +28,7 @@ client.once('ready', () => {
     console.log('Titanium is Online!');
 });
 
-client.on('message', message =>{
+client.on('message', message => {
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
@@ -42,6 +42,7 @@ client.on('message', message =>{
 // Anti Tag \\
 client.on('message', async(msg) => {
     if(msg.content.includes('<@!578968889694748692>')) {
+        if(message.author.bot) return;
         msg.delete()
         msg.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
         .then(msg => {
