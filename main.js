@@ -27,11 +27,13 @@ for(const file of commandFiles){
 client.once('ready', () => {
     console.log('Titanium is Online!');
 });
+
 client.on('message', message => {
-    if(message.author.bot) return; // do nothing
+    if(message.member.roles.has(BOT_ROLE)) return; // do nothing
     // if not responding to a bot, do bot stuff
 
- 
+
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -43,11 +45,12 @@ client.on('message', message => {
 });
 
 // Anti Tag \\
-client.on('message', async(msg) => {
-    if(message.author.bot) return; // do nothing
-    // if not responding to a bot, do bot stuff
- 
-    
+
+client.on('message', message => {
+        if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+        // if not responding to a bot, do bot stuff
+      
+
     if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
         msg.reply('Please DO NOT Ping The Server Founder Directly!')
@@ -67,9 +70,12 @@ client.on('message', async(msg) => {
     }
 });
 
-client.on('message', async(msg) => {
-    if(message.author.bot) return; // do nothing
+
+
+client.on('message', message => {
+    if(message.member.roles.has(BOT_ROLE)) return; // do nothing
     // if not responding to a bot, do bot stuff
+
 
     if(msg.content.includes('<@!335616215001071627>')) {
         msg.delete()
@@ -92,9 +98,3 @@ client.on('message', async(msg) => {
 
 
 client.login(process.env.BOT_TOKEN);
-
-//Bot Check\\
-//client.on('message', message => {
-//   if(message.member.roles.has(BOT_ROLE)) return; // do nothing
-    // if not responding to a bot, do bot stuff
-//  })
