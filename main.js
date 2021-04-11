@@ -41,5 +41,4 @@ client.on('message', message =>{
     }
 });
 
-client.login(process.env.'ODE3ODQyNjcyNTE2OTg4OTQ4.YEPZVw.BINLqMMnpn2DRtS6NGlRt4epeKE
-');
+client.login(process.env.BOTTOKEN);
