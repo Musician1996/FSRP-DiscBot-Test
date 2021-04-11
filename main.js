@@ -8,27 +8,27 @@
 
 const Discord = require('discord.js');
 
-const client = new Discord.Client();
+const bot = new Discord.bot();
 
 const prefix = '|';
 
 const fs = require('fs');
 
-client.commands = new Discord.Collection();
+bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
 
-    client.commands.set(command.name, command);
+    bot.commands.set(command.name, command);
 }
 
 
-client.once('ready', () => {
+bot.once('ready', () => {
     console.log('Titanium is Online!');
 });
 
-client.on('message', message =>{
+bot.on('message', message =>{
     if (message.author.bot) return;
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
@@ -36,7 +36,7 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
 
     if(command === 'clear'){
-        client.commands.get('clear').execute(message, args);
+        bot.commands.get('clear').execute(message, args);
     }
 });
 // Anti Tag \\
@@ -63,7 +63,7 @@ bot.on('message', async(msg) => {
 
 
 
-//client.on('message', async(msg) => {
+//bot.on('message', async(msg) => {
 //   if (message.author.bot) return;
 //    if(msg.content.includes('<@!335616215001071627>')) {
 //        msg.delete()
@@ -72,7 +72,7 @@ bot.on('message', async(msg) => {
 //            setTimeout(() => msg.delete(), 10000)
 //       })
 //
-//        client.on('messageUpdate', (oldMessage, newMessage) => {
+//        bot.on('messageUpdate', (oldMessage, newMessage) => {
 //            if(newMessage.content.includes('<@!335616215001071627>')) {
 //                newMessage.delete()
 //                newMessage.reply('**Please DO NOT Ping The Server Owner Directly!**')
@@ -85,4 +85,4 @@ bot.on('message', async(msg) => {
 //});
 
 
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
