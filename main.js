@@ -29,7 +29,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
-    if (message.author.bot) return;
+    if(message.author.bot) return;
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -44,7 +44,7 @@ client.on('message', async(msg) => {
     
     if(message.author.bot)
    return;
-    if(msg.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
+    if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
         msg.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
         .then(msg => {
@@ -52,7 +52,7 @@ client.on('message', async(msg) => {
         })
 
         client.on('messageUpdate', (oldMessage, newMessage) => {
-            if(newMessage.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
+            if(newMessage.content.includes('<@!578968889694748692>')) {
                 newMessage.delete()
                 newMessage.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
                 .then(msg => {
