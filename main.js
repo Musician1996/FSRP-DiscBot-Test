@@ -47,7 +47,7 @@ client.on('message', async(msg) => {
         msg.delete()
         msg.reply('Please DO NOT Ping The Server Founder Directly!')
         .then(msg => {
-            msg.delete(250)
+            setTimeout(() => msg.delete(), 10000)
         })
 
         client.on('messageUpdate', (oldMessage, newMessage) => {
@@ -55,7 +55,7 @@ client.on('message', async(msg) => {
                 newMessage.delete()
                 newMessage.reply('Please DO NOT Ping The Server Owner Directly!')
                 .then(msg => {
-                    msg.delete(250)
+                    setTimeout(() => msg.delete(), 10000)
                 })
             }
         })
@@ -70,7 +70,7 @@ client.on('message', async(msg) => {
         msg.delete()
         msg.reply('Please DO NOT Ping The Server Owner Directly!')
         .then(msg => {
-            msg.delete(250)
+            setTimeout(() => msg.delete(), 10000)
         })
 
         client.on('messageUpdate', (oldMessage, newMessage) => {
@@ -78,7 +78,7 @@ client.on('message', async(msg) => {
                 newMessage.delete()
                 newMessage.reply('Please DO NOT Ping The Server Owner Directly!')
                 .then(msg => {
-                    msg.delete(250)
+                    setTimeout(() => msg.delete(), 10000)
                 })
             }
         })
