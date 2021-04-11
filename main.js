@@ -30,6 +30,12 @@ client.once('ready', () => {
 
 client.on('message', message =>{
 
+        //BOT CHECK\\
+client.on('message', message => {
+    if(message.member.roles.has(745344687111667782)) return; // do nothing
+    // if not responding to a bot, do bot stuff
+  })
+
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
@@ -42,12 +48,6 @@ client.on('message', message =>{
 });
 
 // Anti Tag \\
-    //BOT CHECK\\
-client.on('message', message => {
-    if(message.member.roles.has(745344687111667782)) return; // do nothing
-    // if not responding to a bot, do bot stuff
-  })
-
 client.on('message', async(msg) => {
     
     if(msg.content.includes('<@!578968889694748692>')) {
@@ -68,12 +68,6 @@ client.on('message', async(msg) => {
         })
     }
 });
-
-    //BOT CHECK\\
-client.on('message', message => {
-    if(message.member.roles.has(745344687111667782)) return; // do nothing
-    // if not responding to a bot, do bot stuff
-  })
 
 client.on('message', async(msg) => {
 
