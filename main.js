@@ -1,10 +1,10 @@
-//const express = require('express');
-//const app = express();
-//const port = 3000;
+const express = require('express');
+const app = express();
+const port = 3000;
 
-//app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello World!'));
 
-//pp.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 const Discord = require('discord.js');
 
@@ -39,6 +39,19 @@ client.on('message', message =>{
     if(command === 'clear'){
         client.commands.get('clear').execute(message, args);
     }
+
+client.on('message', async(msg) => {
+ 
+    if(msg.content.includes('<@!578968889694748692>')) { // PUT YOUR USER ID WHERE IT SAYS **YOUR USER ID HERE**
+        msg.delete()
+        msg.reply('Do Not Ping The Founder! If You Need Support Either Use the Command *open Or Please Contact A Staff Member')
+    }
+
+client.on('messageUpdate' , (oldMessage, newMessage) => {
+    if(newMessage.content.includes('<@!578968889694748692>')) { //YOUR USER ID HERE
+        newMessage.delete()
+        newMessage.reply('Do Not Ping The Founder! If You Need Support Either Use the Command *open Or Please Contact A Staff Member!')
+        }
 });
 
-client.login(process.env.BOT_TOKEN)
+client.login(process.env.BOTTOKEN);
