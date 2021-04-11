@@ -59,4 +59,4 @@ client.on('message', async(msg) => {
 });
 
 
-client.login(BOTTOKEN);
+client.login(BOT_TOKEN);
