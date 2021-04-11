@@ -29,7 +29,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+    if(message.member.roles.has(745344687111667782)) return; // do nothing
     // if not responding to a bot, do bot stuff
 
 
@@ -47,7 +47,7 @@ client.on('message', message => {
 // Anti Tag \\
 
 client.on('message', message => {
-        if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+        if(message.member.roles.has(745344687111667782)) return; // do nothing
         // if not responding to a bot, do bot stuff
       
 
@@ -73,7 +73,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+    if(message.member.roles.has(745344687111667782)) return; // do nothing
     // if not responding to a bot, do bot stuff
 
 
