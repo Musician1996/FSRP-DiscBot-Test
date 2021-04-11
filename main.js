@@ -41,7 +41,8 @@ client.on('message', message =>{
 });
 // Anti Tag \\
 client.on('message', async(msg) => {
-    if (message.author.bot)
+    
+    if(message.author.bot)
    return;
     if(msg.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
         msg.delete()
