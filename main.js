@@ -27,10 +27,13 @@ for(const file of commandFiles){
 client.once('ready', () => {
     console.log('Titanium is Online!');
 });
-
 client.on('message', message => {
-    
-    if(message.author.bot) return;
+    if(message.author.bot) return; // do nothing
+    // if not responding to a bot, do bot stuff
+  })
+  
+client.on('message', message => {
+ 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
     const args = message.content.slice(prefix.length).split(/ +/);
