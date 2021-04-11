@@ -30,11 +30,9 @@ client.once('ready', () => {
 
 client.on("message", msg=>{
     if(!msg.member.hasPermission("MANAGE_MESSAGES")) return;
-    // It returns the function if the member doesn't have the permission and doesn't execute the code below from here.
-
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-    
+
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
