@@ -50,7 +50,22 @@ client.on('message', async(msg) => {
         client.on('messageUpdate', (oldMessage, newMessage) => {
             if(newMessage.content.includes('<@!578968889694748692>')) {
                 newMessage.delete()
-                newMessage.reply('Please DO NOT Ping The Server Founder Directly!')
+                newMessage.reply('Please DO NOT Ping The Server Owner Directly!')
+            }
+        })
+    }
+});
+
+client.on('message', async(msg) => {
+
+    if(msg.content.includes('<@!335616215001071627>')) {
+        msg.delete()
+        msg.reply('Please DO NOT Ping The Server Founder Directly!')
+
+        client.on('messageUpdate', (oldMessage, newMessage) => {
+            if(newMessage.content.includes('<@!335616215001071627>')) {
+                newMessage.delete()
+                newMessage.reply('Please DO NOT Ping The Server Owner Directly!')
             }
         })
     }
