@@ -41,22 +41,4 @@ client.on('message', message =>{
     }
 });
 
-client.on('message', async(msg) => {
-
-    if(msg.content.includes('<@!578968889694748692>')) {
-        msg.delete()
-        msg.reply('You May Not Ping The Founder EVER!')
-    }
-
-    client.on('messageUpdate' , (oldMessage, newMessage) => {
-        if(newMessage.content.includes('<@!578968889694748692>')) {
-            newMessage.delete()
-            newMessage.reply('You May Not Ping The Founder EVER!')
-
-        }
-
-    })
-});
-
-
-client.login(BOT_TOKEN);
+client.login(process.env.BOTTOKEN);
