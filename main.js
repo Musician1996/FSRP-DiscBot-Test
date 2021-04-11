@@ -40,8 +40,8 @@ client.on('message', message =>{
     }
 });
 // Anti Tag \\
-client.on('message', (message) => {
-    if (message.author.bot) return;
+client.on('message', async(msg) => {
+    
     if(msg.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
         msg.delete()
         msg.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
