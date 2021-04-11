@@ -29,8 +29,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if(message.member.roles.has(745344687111667782)) return; // do nothing
-    // if not responding to a bot, do bot stuff
+    message.member.roles.cache.some(role => role.name === 'FSRP Bots')
 
 
 
@@ -47,8 +46,7 @@ client.on('message', message => {
 // Anti Tag \\
 
 client.on('message', message => {
-        if(message.member.roles.has(745344687111667782)) return; // do nothing
-        // if not responding to a bot, do bot stuff
+    message.member.roles.cache.some(role => role.name === 'FSRP Bots')
       
 
     if(msg.content.includes('<@!578968889694748692>')) {
@@ -73,8 +71,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if(message.member.roles.has(745344687111667782)) return; // do nothing
-    // if not responding to a bot, do bot stuff
+    message.member.roles.cache.some(role => role.name === 'FSRP Bots')
 
 
     if(msg.content.includes('<@!335616215001071627>')) {
