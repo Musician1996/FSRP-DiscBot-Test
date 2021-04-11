@@ -28,9 +28,9 @@ client.once('ready', () => {
     console.log('Titanium is Online!');
 });
 
-client.on('message', message => {
-    if(message.author.bot) return;
-
+client.on("message", msg=>{
+    if(!msg.member.hasPermission("MANAGE_MESSAGES")) return;
+    // It returns the function if the member doesn't have the permission and doesn't execute the code below from here.
 
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -46,7 +46,6 @@ client.on('message', message => {
 // Anti Tag \\
 
 client.on('message', message => {
-    if(message.author.bot) return;
       
     if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
@@ -70,7 +69,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if(message.author.bot) return;
 
     if(msg.content.includes('<@!335616215001071627>')) {
         msg.delete()
