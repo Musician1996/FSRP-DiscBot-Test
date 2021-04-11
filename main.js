@@ -1,10 +1,10 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+//const express = require('express');
+//const app = express();
+//const port = 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+//app.get('/', (req, res) => res.send('Hello World!'));
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+//app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 const Discord = require('discord.js');
 
@@ -41,4 +41,4 @@ client.on('message', message =>{
     }
 });
 
-client.login(process.env.BOTTOKEN);
+client.login(process.env.ODE3ODQyNjcyNTE2OTg4OTQ4.YEPZVw.tT9_eUc_9Uc5_E_4LR1WH0CDODM);
