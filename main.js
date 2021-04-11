@@ -42,17 +42,17 @@ client.on('message', message =>{
 // Anti Tag \\
 client.on('message', async(msg) => {
     if (message.author.bot) return;
-    if(msg.content.includes('<@!578968889694748692>')) {
+    if(msg.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
         msg.delete()
-        msg.reply('**Please DO NOT Ping The Server Founder Directly!**')
+        msg.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
         .then(msg => {
             setTimeout(() => msg.delete(), 10000)
         })
 
         client.on('messageUpdate', (oldMessage, newMessage) => {
-            if(newMessage.content.includes('<@!578968889694748692>')) {
+            if(newMessage.content.includes('<@!578968889694748692>','<@!335616215001071627>')) {
                 newMessage.delete()
-                newMessage.reply('**Please DO NOT Ping The Server Founder Directly!**')
+                newMessage.reply('**Please DO NOT Ping These Members Directly! Please Use *open To Open a Ticket For support!**')
                 .then(msg => {
                     setTimeout(() => msg.delete(), 10000)
                 })
@@ -63,26 +63,26 @@ client.on('message', async(msg) => {
 
 
 
-client.on('message', async(msg) => {
-    if (message.author.bot) return;
-    if(msg.content.includes('<@!335616215001071627>')) {
-        msg.delete()
-        msg.reply('**Please DO NOT Ping The Server Owner Directly!**')
-        .then(msg => {
-            setTimeout(() => msg.delete(), 10000)
-        })
-
-        client.on('messageUpdate', (oldMessage, newMessage) => {
-            if(newMessage.content.includes('<@!335616215001071627>')) {
-                newMessage.delete()
-                newMessage.reply('**Please DO NOT Ping The Server Owner Directly!**')
-                .then(msg => {
-                    setTimeout(() => msg.delete(), 10000)
-                })
-            }
-        })
-    }
-});
+//client.on('message', async(msg) => {
+//   if (message.author.bot) return;
+//    if(msg.content.includes('<@!335616215001071627>')) {
+//        msg.delete()
+//        msg.reply('**Please DO NOT Ping The Server Owner Directly!**')
+//        .then(msg => {
+//            setTimeout(() => msg.delete(), 10000)
+//       })
+//
+//        client.on('messageUpdate', (oldMessage, newMessage) => {
+//            if(newMessage.content.includes('<@!335616215001071627>')) {
+//                newMessage.delete()
+//                newMessage.reply('**Please DO NOT Ping The Server Owner Directly!**')
+//                .then(msg => {
+//                    setTimeout(() => msg.delete(), 10000)
+//                })
+//            }
+//        })
+//    }
+//});
 
 
 client.login(process.env.BOT_TOKEN);
