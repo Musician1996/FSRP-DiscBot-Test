@@ -29,13 +29,11 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
-
-        //BOT CHECK\\
-client.on('message', message => {
-    if(message.member.roles.has(745344687111667782)) return; // do nothing
+        if(message.author.bot) return; // do nothing
     // if not responding to a bot, do bot stuff
-  })
+    
 
+    
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
