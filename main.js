@@ -58,4 +58,4 @@ client.on('message', async(msg) => {
     })
 });
 
-client.login(config.token);
+client.login(token);
