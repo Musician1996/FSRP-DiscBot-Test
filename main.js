@@ -39,19 +39,23 @@ client.on('message', message =>{
     if(command === 'clear'){
         client.commands.get('clear').execute(message, args);
     }
+    
+});
 
 client.on('message', async(msg) => {
  
     if(msg.content.includes('<@!578968889694748692>')) { // PUT YOUR USER ID WHERE IT SAYS **YOUR USER ID HERE**
         msg.delete()
-        msg.reply('Do Not Ping The Founder! If You Need Support Either Use the Command *open Or Please Contact A Staff Member')
+        msg.reply('you cannot ping this user')
     }
 
 client.on('messageUpdate' , (oldMessage, newMessage) => {
     if(newMessage.content.includes('<@!578968889694748692>')) { //YOUR USER ID HERE
         newMessage.delete()
-        newMessage.reply('Do Not Ping The Founder! If You Need Support Either Use the Command *open Or Please Contact A Staff Member!')
-        }
+        newMessage.reply('you cannot ping this user!')
+    }
 });
 
-client.login(process.env.BOTTOKEN);
+client.login(config.token);
+
+//client.login(process.env.BOTTOKEN);
