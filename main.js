@@ -40,3 +40,5 @@ client.on('message', message =>{
         client.commands.get('clear').execute(message, args);
     }
 });
+
+bot.login(process.env.BOT_TOKEN)
