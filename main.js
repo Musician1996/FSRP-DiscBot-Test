@@ -28,11 +28,11 @@ client.once('ready', () => {
     console.log('Titanium is Online!');
 });
 
-client.on("message", msg=>{
-    if(!msg.member.hasPermission("MANAGE_MESSAGES")) return;
+client.on('message', message =>{
+
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-
+    
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
@@ -40,11 +40,9 @@ client.on("message", msg=>{
         client.commands.get('clear').execute(message, args);
     }
 });
-
 // Anti Tag \\
+client.on('message', async(msg) => {
 
-client.on('message', message => {
-      
     if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
         msg.reply('Please DO NOT Ping The Server Founder Directly!')
@@ -66,7 +64,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
+client.on('message', async(msg) => {
 
     if(msg.content.includes('<@!335616215001071627>')) {
         msg.delete()
