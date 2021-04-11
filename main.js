@@ -41,8 +41,15 @@ client.on('message', message =>{
     }
 });
 
-client.on('message', async(msg) => {
+// Anti Tag \\
+    //BOT CHECK\\
+client.on('message', message => {
+    if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+    // if not responding to a bot, do bot stuff
+  })
 
+client.on('message', async(msg) => {
+    
     if(msg.content.includes('<@!578968889694748692>')) {
         msg.delete()
         msg.reply('Please DO NOT Ping The Server Founder Directly!')
@@ -62,7 +69,11 @@ client.on('message', async(msg) => {
     }
 });
 
-
+    //BOT CHECK\\
+client.on('message', message => {
+    if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+    // if not responding to a bot, do bot stuff
+  })
 
 client.on('message', async(msg) => {
 
@@ -87,3 +98,9 @@ client.on('message', async(msg) => {
 
 
 client.login(process.env.BOT_TOKEN);
+
+//Bot Check\\
+//client.on('message', message => {
+//   if(message.member.roles.has(BOT_ROLE)) return; // do nothing
+    // if not responding to a bot, do bot stuff
+//  })
